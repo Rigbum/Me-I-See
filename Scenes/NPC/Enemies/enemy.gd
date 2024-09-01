@@ -18,13 +18,13 @@ func _physics_process(delta):
 		position += (Ivy.position - position)/speed
 
 		$AnimatedSprite3D.play("walk")
-		
+
 		if(Ivy.position.x - position.x) < 0:
 			$AnimatedSprite3D.flip_h = true
 		else:
 			$AnimatedSprite3D.flip_h = false
 	else:
-		$AnimatedSprite3D.play("Idle")	
+		$AnimatedSprite3D.play("Idle")
 	move_and_slide()
 	movement(delta)
 
@@ -45,5 +45,3 @@ func _on_aggro_range_body_exited(body):
 func movement(delta):
 	if not is_on_floor():
 		velocity.y -= gravity * delta
-
-	

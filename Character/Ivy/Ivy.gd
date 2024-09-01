@@ -12,7 +12,7 @@ const JUMP_VELOCITY = 2.5
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var current_dir = "none"
 
-	
+
 func _physics_process(delta):
 	player_movement(delta)
 
@@ -36,7 +36,7 @@ func player_movement(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-		
+
 	if Input.is_action_pressed("Left"):
 		current_dir = "left"
 		play_anim(1)
@@ -45,25 +45,25 @@ func player_movement(delta):
 	elif Input.is_action_pressed("Right"):
 		current_dir = "right"
 		play_anim(1)
-		
+
 	elif Input.is_action_pressed("Forward"):
 		current_dir = "up"
 		play_anim(1)
-		
+
 	elif Input.is_action_pressed("Backward"):
 		current_dir = "back"
 		play_anim(1)
-	
+
 	else:
 		play_anim(0)
-		
-	
+
+
 	move_and_slide()
 
 func play_anim(movement):
 	var dir = current_dir
 	var anim = $AnimatedSprite3D
-	
+
 	if dir == "right":
 		anim.flip_h = false
 		if movement == 1:
