@@ -1,0 +1,168 @@
+[gd_scene load_steps=23 format=3 uid="uid://bop8edeugblb5"]
+
+[ext_resource type="Script" path="res://Scenes/Level/test_world.gd" id="1_1hj25"]
+[ext_resource type="PackedScene" uid="uid://dvi3e0jp8c088" path="res://Character/Ivy/Ivy.tscn" id="1_j3e3g"]
+[ext_resource type="Texture2D" uid="uid://dk8210km4nq4x" path="res://sprites/characters/grss.png" id="1_ni2u4"]
+[ext_resource type="PackedScene" uid="uid://crqkh5mnk3j2b" path="res://Scenes/NPC/Enemies/enemy.tscn" id="3_tc4ii"]
+[ext_resource type="Texture2D" uid="uid://bq3ahf7iv52xi" path="res://Textures/orange3.png" id="4_3cbyk"]
+[ext_resource type="Texture2D" uid="uid://3bc3chtc4oya" path="res://Textures/purple.png" id="4_wmj12"]
+[ext_resource type="Texture2D" uid="uid://bnqv350mk5m0f" path="res://Textures/light blue.png" id="6_aahpn"]
+[ext_resource type="Texture2D" uid="uid://42g3xupbtpdr" path="res://Textures/pokadot2.png" id="6_hgo0g"]
+[ext_resource type="Texture2D" uid="uid://3mkbhe1mrcxn" path="res://Textures/blue2.png" id="6_hrslu"]
+[ext_resource type="Texture2D" uid="uid://c5xwruoai752e" path="res://Textures/purple2.png" id="6_ui3sv"]
+[ext_resource type="PackedScene" uid="uid://ccvxw2mgfbvkc" path="res://Scenes/Menus/pause_menu.tscn" id="11_v24o8"]
+[ext_resource type="PackedScene" uid="uid://ctfo17v1orudc" path="res://Scenes/NPC/Spasm/Spasm.tscn" id="12_vweic"]
+[ext_resource type="PackedScene" uid="uid://buq471yp3orq6" path="res://Scenes/Object/Items/Weird Eye/eye.tscn" id="13_17lhb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p1xbd"]
+albedo_texture = ExtResource("1_ni2u4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q88tm"]
+albedo_texture = ExtResource("4_3cbyk")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ct8tk"]
+albedo_texture = ExtResource("4_wmj12")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0vygs"]
+albedo_texture = ExtResource("6_aahpn")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7xy7v"]
+albedo_texture = ExtResource("6_hgo0g")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u2oy7"]
+albedo_texture = ExtResource("6_ui3sv")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ygr53"]
+albedo_texture = ExtResource("6_hrslu")
+
+[sub_resource type="Environment" id="Environment_rkn2l"]
+ssao_enabled = true
+ssil_intensity = 1.09
+sdfgi_enabled = true
+fog_enabled = true
+fog_light_energy = 0.27
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.008
+adjustment_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nrnul"]
+size = Vector3(3.70044, 1, 5.65887)
+
+[node name="Test_World" type="Node3D"]
+script = ExtResource("1_1hj25")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.857, -0.397217, -14.2212)
+material_override = SubResource("StandardMaterial3D_p1xbd")
+cast_shadow = 0
+use_collision = true
+collision_layer = 3
+collision_mask = 3
+size = Vector3(100, 0.206, 100)
+
+[node name="Ivy" parent="." instance=ExtResource("1_j3e3g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1285, 1.83209, -19.1102)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7114, 0, -14.2844)
+visible = false
+use_collision = true
+collision_layer = 5
+collision_mask = 5
+size = Vector3(1, 1, 44.6564)
+
+[node name="Enemy" parent="." instance=ExtResource("3_tc4ii")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.1896, 0.0347261, -21.7994)
+
+[node name="Enemy2" parent="." instance=ExtResource("3_tc4ii")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.4203, 0.0694522, -11.6393)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4343, 4.72789, -1.31641)
+material_override = SubResource("StandardMaterial3D_q88tm")
+size = Vector3(7.36127, 1, 6.80078)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGBox3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0416145, 0.925848, 0.0555755)
+material_override = SubResource("StandardMaterial3D_ct8tk")
+size = Vector3(6.6587, 1, 5.79675)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.720224, 0, 0.693741, 0, 1, 0, -0.693741, 0, -0.720224, -25.7497, -0.747935, -10.644)
+material_override = SubResource("StandardMaterial3D_0vygs")
+use_collision = true
+size = Vector3(1, 5.18066, 5.34521)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGBox3D5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.87072, 0.00405407, 0.00319648)
+use_collision = true
+size = Vector3(1, 5.18066, 5.34521)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGBox3D5/CSGBox3D3"]
+transform = Transform3D(0.034603, 0, -0.999401, 0, 1, 0, 0.999401, 0, 0.034603, 2.41764, 0.00405407, -2.58417)
+use_collision = true
+size = Vector3(1, 5.18066, 5.88367)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.128, 2.09033, -1.18703)
+material_override = SubResource("StandardMaterial3D_7xy7v")
+use_collision = true
+collision_layer = 5
+collision_mask = 5
+size = Vector3(1, 5.18066, 5.34521)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGBox3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.87072, 0.00405407, 0.00319648)
+use_collision = true
+size = Vector3(1, 5.18066, 5.34521)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.0259, -0.00477004, -20.5714)
+material_override = SubResource("StandardMaterial3D_u2oy7")
+use_collision = true
+size = Vector3(1, 5.18066, 5.34521)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGBox3D6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.87072, 0.00405407, 0.00319648)
+material_override = SubResource("StandardMaterial3D_ygr53")
+use_collision = true
+size = Vector3(1, 5.18066, 5.34521)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGBox3D6/CSGBox3D3"]
+transform = Transform3D(0.034603, 0, -0.999401, 0, 1, 0, 0.999401, 0, 0.034603, 2.41764, 0.00405407, -2.58417)
+use_collision = true
+size = Vector3(1, 5.18066, 5.88367)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_rkn2l")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, -3.49066e-05, 0, 3.49066e-05, 1, 0, 0, 0, 1, -14.1732, 5.00184, -13.5133)
+layers = 5
+
+[node name="startgamedetection" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5491, 0.194449, -0.48478)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="startgamedetection"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00183105, 0.294101, -0.892731)
+shape = SubResource("BoxShape3D_nrnul")
+
+[node name="Moving_Cube" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.4441, 0.391967, 0)
+use_collision = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("11_v24o8")]
+
+[node name="Spasm" parent="." instance=ExtResource("12_vweic")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4764, 3.61093, -15.356)
+
+[node name="Eye" parent="." instance=ExtResource("13_17lhb")]
+transform = Transform3D(0.997972, 0.0636614, 0, -0.0636614, 0.997972, 0, 0, 0, 1, -19.6234, 2.21944, -3.82126)
+
+[connection signal="body_entered" from="startgamedetection" to="." method="_on_startgamedetection_body_entered"]
+[connection signal="focus_entered" from="CanvasLayer/PauseMenu" to="." method="_on_pause_menu_focus_entered"]
+[connection signal="gui_input" from="CanvasLayer/PauseMenu" to="." method="_on_pause_menu_gui_input"]
+
+[editable path="CanvasLayer/PauseMenu"]

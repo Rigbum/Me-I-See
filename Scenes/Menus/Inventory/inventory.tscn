@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=3 uid="uid://d3blcairye841"]
+
+[ext_resource type="Script" path="res://Scenes/Menus/Inventory/inventory.gd" id="1_8qml3"]
+[ext_resource type="Script" path="res://Scenes/Menus/Inventory/Scripts/InventoryUI.gd" id="2_061vt"]
+[ext_resource type="Script" path="res://Scenes/Menus/Inventory/Scripts/InventoryData.gd" id="3_klax2"]
+[ext_resource type="Texture2D" uid="uid://bgpivbco02g67" path="res://sprites/Menus/textart.png" id="5_1mftq"]
+[ext_resource type="Script" path="res://inv_slot.gd" id="5_dck0r"]
+[ext_resource type="PackedScene" uid="uid://dgi1gnqlay4qt" path="res://Scenes/Menus/Inventory/item_slot.tscn" id="6_f7rmw"]
+
+[sub_resource type="Resource" id="Resource_am8l2"]
+script = ExtResource("3_klax2")
+slots = Array[ExtResource("5_dck0r")]([])
+
+[node name="Inventory" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 41.0
+offset_top = 12.0
+offset_right = -12.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8qml3")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+offset_left = 30.0
+offset_top = 69.0
+offset_right = 235.0
+offset_bottom = 457.0
+scale = Vector2(0.760002, 0.68)
+
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer"]
+position = Vector2(-39.4736, -11.7647)
+scale = Vector2(1.31579, 1.47059)
+
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/Sprite2D"]
+position = Vector2(104.5, 131.5)
+scale = Vector2(0.7175, 1.1175)
+texture = ExtResource("5_1mftq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+script = ExtResource("2_061vt")
+data = SubResource("Resource_am8l2")
+
+[node name="ItemSlot" parent="MarginContainer/VBoxContainer" instance=ExtResource("6_f7rmw")]
+layout_mode = 2
+
+[node name="ItemSlot2" parent="MarginContainer/VBoxContainer" instance=ExtResource("6_f7rmw")]
+layout_mode = 2
+
+[node name="ItemSlot3" parent="MarginContainer/VBoxContainer" instance=ExtResource("6_f7rmw")]
+layout_mode = 2
+
+[node name="ItemSlot4" parent="MarginContainer/VBoxContainer" instance=ExtResource("6_f7rmw")]
+layout_mode = 2
+
+[node name="ItemSlot5" parent="MarginContainer/VBoxContainer" instance=ExtResource("6_f7rmw")]
+layout_mode = 2
+
+[node name="ItemSlot6" parent="MarginContainer/VBoxContainer" instance=ExtResource("6_f7rmw")]
+layout_mode = 2
+
+[node name="ItemSlot7" parent="MarginContainer/VBoxContainer" instance=ExtResource("6_f7rmw")]
+layout_mode = 2
+
+[node name="ItemSlot8" parent="MarginContainer/VBoxContainer" instance=ExtResource("6_f7rmw")]
+layout_mode = 2
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ItemSlot" to="." method="_on_item_slot_pressed"]

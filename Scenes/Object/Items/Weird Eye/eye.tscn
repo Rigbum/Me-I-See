@@ -1,0 +1,129 @@
+[gd_scene load_steps=15 format=3 uid="uid://buq471yp3orq6"]
+
+[ext_resource type="Script" path="res://Scenes/Object/Items/Weird Eye/Eye.gd" id="1_hvo7k"]
+[ext_resource type="Texture2D" uid="uid://b5rrwmagtmdxx" path="res://sprites/objects/eye sprite.png" id="1_v4lhk"]
+[ext_resource type="Resource" uid="uid://jcxltwo27psl" path="res://Scenes/Object/Items/Weird Eye/Weird Eye.tres" id="2_2lts7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tv7nu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dckxx"]
+atlas = ExtResource("1_v4lhk")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cyfnp"]
+atlas = ExtResource("1_v4lhk")
+region = Rect2(200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5yhhy"]
+atlas = ExtResource("1_v4lhk")
+region = Rect2(400, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4twfa"]
+atlas = ExtResource("1_v4lhk")
+region = Rect2(0, 200, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08g15"]
+atlas = ExtResource("1_v4lhk")
+region = Rect2(200, 200, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nl4aw"]
+atlas = ExtResource("1_v4lhk")
+region = Rect2(400, 200, 200, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wwg74"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dckxx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cyfnp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5yhhy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4twfa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dckxx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cyfnp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_08g15")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nl4aw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 13.0
+}]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_udqmx"]
+size = Vector3(7.56519, 3.02881, 6.2366)
+
+[sub_resource type="Animation" id="Animation_m1jej"]
+resource_name = "Fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite3D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("AnimatedSprite3D:transparent")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o701p"]
+_data = {
+"Fade": SubResource("Animation_m1jej")
+}
+
+[node name="Eye" type="Node3D"]
+script = ExtResource("1_hvo7k")
+item = ExtResource("2_2lts7")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+collision_layer = 513
+collision_mask = 513
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+shape = SubResource("BoxShape3D_tv7nu")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+sprite_frames = SubResource("SpriteFrames_wwg74")
+frame_progress = 0.588149
+
+[node name="PickUp" type="Area3D" parent="."]
+collision_layer = 513
+collision_mask = 513
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PickUp"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.386392, -1.0144, 0.260697)
+shape = SubResource("BoxShape3D_udqmx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_o701p")
+}
+
+[connection signal="body_entered" from="PickUp" to="." method="_on_pick_up_body_entered"]
+[connection signal="body_exited" from="PickUp" to="." method="_on_pick_up_body_exited"]

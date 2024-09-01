@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cu6i1w27nsqid"
+path="res://.godot/imported/GODDESS OF VICTORY NIKKE OST - Outpost Theme (Extended).mp3-2cf061326d6e56ee1b08f5c5028588a1.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/GODDESS OF VICTORY NIKKE OST - Outpost Theme (Extended).mp3"
+dest_files=["res://.godot/imported/GODDESS OF VICTORY NIKKE OST - Outpost Theme (Extended).mp3-2cf061326d6e56ee1b08f5c5028588a1.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://emc4sqdbw2k0"]
+
+[ext_resource type="PackedScene" uid="uid://dvi3e0jp8c088" path="res://Character/Ivy/Ivy.tscn" id="1_quu74"]
+[ext_resource type="PackedScene" uid="uid://buq471yp3orq6" path="res://Scenes/Object/Items/Weird Eye/eye.tscn" id="3_7kswf"]
+
+[node name="Test_World2" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.07289, 0, -5.1774)
+use_collision = true
+size = Vector3(100, 1, 100)
+
+[node name="Ivy" parent="." instance=ExtResource("1_quu74")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.99455, 3.65334, -5.1774)
+
+[node name="Eye" parent="." instance=ExtResource("3_7kswf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.55434, 2.59844, -2.8572)

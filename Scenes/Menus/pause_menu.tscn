@@ -1,0 +1,154 @@
+[gd_scene load_steps=10 format=3 uid="uid://ccvxw2mgfbvkc"]
+
+[ext_resource type="Script" path="res://Scenes/Menus/pause_menu.gd" id="1_4nv5e"]
+[ext_resource type="PackedScene" uid="uid://d3blcairye841" path="res://Scenes/Menus/Inventory/inventory.tscn" id="2_p462j"]
+[ext_resource type="Texture2D" uid="uid://bgpivbco02g67" path="res://sprites/Menus/textart.png" id="2_ysdbc"]
+[ext_resource type="FontFile" uid="uid://ch8bm3po0n3ik" path="res://Fonts/Tomorrow_Night.ttf" id="3_p0x21"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4lpw1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l22eo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y5e8d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oxups"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3avi4"]
+
+[node name="PauseMenu" type="Control"]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 38.0
+offset_top = 73.0
+offset_right = -1.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4nv5e")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
+
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/VBoxContainer/Sprite2D"]
+position = Vector2(46, 55)
+scale = Vector2(0.39, 0.755)
+texture = ExtResource("2_ysdbc")
+
+[node name="Status" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.467365, 0.00239528, 0.768268, 1)
+theme_override_colors/font_focus_color = Color(0.466667, 0.00392157, 0.768627, 1)
+theme_override_fonts/font = ExtResource("3_p0x21")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4lpw1")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_4lpw1")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_4lpw1")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_4lpw1")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_4lpw1")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_4lpw1")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4lpw1")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_4lpw1")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_4lpw1")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_4lpw1")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4lpw1")
+text = "Status"
+
+[node name="Inventory" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.466667, 0.00392157, 0.768627, 1)
+theme_override_colors/font_focus_color = Color(0.466667, 0.00392157, 0.768627, 1)
+theme_override_fonts/font = ExtResource("3_p0x21")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l22eo")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_l22eo")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_l22eo")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_l22eo")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_l22eo")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_l22eo")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_l22eo")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_l22eo")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_l22eo")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_l22eo")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_l22eo")
+text = "Inventory
+"
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.466667, 0.00392157, 0.768627, 1)
+theme_override_colors/font_focus_color = Color(0.466667, 0.00392157, 0.768627, 1)
+theme_override_fonts/font = ExtResource("3_p0x21")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/focus = SubResource("StyleBoxEmpty_y5e8d")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_y5e8d")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_y5e8d")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_y5e8d")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_y5e8d")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_y5e8d")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_y5e8d")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_y5e8d")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_y5e8d")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_y5e8d")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_y5e8d")
+text = "Options"
+
+[node name="Resume" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(0.466667, 0.00392157, 0.768627, 1)
+theme_override_fonts/font = ExtResource("3_p0x21")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/focus = SubResource("StyleBoxEmpty_oxups")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_oxups")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_oxups")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_oxups")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_oxups")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_oxups")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_oxups")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_oxups")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_oxups")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_oxups")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_oxups")
+text = "Resume"
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.466667, 0.00392157, 0.768627, 1)
+theme_override_colors/font_focus_color = Color(0.466667, 0.00392157, 0.768627, 1)
+theme_override_fonts/font = ExtResource("3_p0x21")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3avi4")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_3avi4")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_3avi4")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_3avi4")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_3avi4")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_3avi4")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_3avi4")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_3avi4")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3avi4")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_3avi4")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3avi4")
+text = "Quit"
+
+[node name="Inventory" parent="." instance=ExtResource("2_p462j")]
+visible = false
+layout_mode = 1
+offset_left = 84.0
+offset_top = -33.0
+offset_right = 31.0
+offset_bottom = -61.0
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Status" to="." method="_on_status_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Inventory" to="." method="_on_inventory_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

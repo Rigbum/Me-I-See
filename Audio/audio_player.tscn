@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cb7xtnr754bjt"]
+
+[ext_resource type="Script" path="res://AudioPlayer.gd" id="1_naagr"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+volume_db = -4.333
+script = ExtResource("1_naagr")

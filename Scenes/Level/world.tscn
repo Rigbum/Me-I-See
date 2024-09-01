@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxw6g2lothctc"]
+
+[ext_resource type="PackedScene" uid="uid://c4gbehhbwpfd8" path="res://character_body_3d.tscn" id="1_uvewe"]
+
+[node name="World" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.51868, -0.442627, -11.1701)
+use_collision = true
+size = Vector3(24.5617, 0.114746, 47.7228)
+
+[node name="Ivy" parent="." instance=ExtResource("1_uvewe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.44034, 1.21468, -11.1701)

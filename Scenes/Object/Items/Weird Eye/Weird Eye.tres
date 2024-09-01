@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=2 format=3 uid="uid://jcxltwo27psl"]
+
+[ext_resource type="Script" path="res://Items/Scripts/ItemData.gd" id="1_uw6cx"]
+
+[resource]
+script = ExtResource("1_uw6cx")
+name = "Weird Eye"
+description = "It's still wriggling..."
