@@ -15,6 +15,7 @@ dest_files=["res://.godot/imported/Whacky_Joe.ttf-46a14d72e601b806b8f5cd34888b3d
 Rendering=null
 antialiasing=1
 generate_mipmaps=false
+disable_embedded_bitmaps=true
 multichannel_signed_distance_field=false
 msdf_pixel_range=8
 msdf_size=48

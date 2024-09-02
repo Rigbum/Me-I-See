@@ -12,7 +12,7 @@ func _ready():
 
 var _is_paused:bool = false:
 	set = set_paused
-	
+
 
 func update_slots():
 	for Interact in range(min(inv.slots.size(), slots.size())):
@@ -22,9 +22,9 @@ func update_slots():
 func _unhandled_input(event: InputEvent) ->void:
 	if event.is_action_pressed("pause"):
 		$".".visible = false
-		
-		
-	
+
+
+
 
 func set_paused(value:bool) ->void:
 	_is_paused = value
@@ -34,7 +34,7 @@ func set_paused(value:bool) ->void:
 
 func initialize_focus():
 	$MarginContainer/VBoxContainer/ItemSlot.grab_focus()
-	
+
 
 
 

@@ -1,6 +1,6 @@
 extends Area3D
 
-class_name Interactable 
+class_name Interactable
 
 
 # Emitted when an Interactor starts looking at me.
